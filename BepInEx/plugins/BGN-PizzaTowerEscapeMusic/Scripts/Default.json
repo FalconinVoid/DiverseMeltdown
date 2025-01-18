@@ -1,0 +1,117 @@
+{
+    "isAddon": true,
+    "volumeGroups": [
+        {
+            "volumeLerpSpeed": 2,
+            "stoppingVolumeLerpSpeed": 0.25,
+            "volumeRules": [
+                {
+                    "comment": "Spectator volume",
+                    "volume": 0.5,
+                    "condition": {
+                        "conditionType": "Not",
+                        "condition": {
+                            "conditionType": "PlayerAlive"
+                        }
+                    }
+                },
+                {
+                    "comment": "Inside facility volume",
+                    "volume": 1,
+                    "condition": {
+                        "conditionType": "PlayerLocation",
+                        "location": "Facility"
+                    }
+                },
+                {
+                    "comment": "Inside ship volume",
+                    "volume": 0.4,
+                    "condition": {
+                        "conditionType": "PlayerLocation",
+                        "location": "Ship"
+                    }
+                },
+                {
+                    "comment": "Default volume",
+                    "volume": 0.7
+                }
+            ],
+            "volumeModifiers": [
+                {
+                    "comment": "Crouching volume scale",
+                    "volumeScale": 0.5,
+                    "condition": {
+                        "conditionType": "PlayerCrouching"
+                    }
+                }
+            ]
+        }
+    ],
+    "scriptEvents": [
+        {
+            "scriptEventType": "PlayMusic",
+            "gameEventType": "ApparatusTaken",
+			"overlapHandling": "Overlap",
+            "conditions": [],
+            "musicNames": ["Announcer1.mp3", "Announcer2.mp3"]
+        },
+        {
+            "scriptEventType": "PlayMusic",
+            "gameEventType": "ApparatusTaken",
+			"overlapHandling": "IgnoreTag",
+			"tag": "EscapeMusic",
+            "conditions": [],
+            "musicNames": [
+                "Almost_At_Fifty_Percent.mp3"
+            ]
+        },
+        {
+            "comment": "Plays music when you take the Apparatus",
+			"scriptEventType": "PlayMusic",
+            "gameEventType": "ApparatusTaken",
+			"overlapHandling": "OverrideTag",
+			"tag": "EscapeMusic",
+            "conditions": [{
+                "conditionType": "Weather",
+                "weather": "Eclipsed"
+            },
+            {
+                "conditionType": "Weather",
+                "weather": "Stormy"
+            }],
+            "musicNames": [
+                "You_Will_Be_Perfect.mp3"
+            ]
+        },
+        {
+            "scriptEventType": "PlayMusic",
+            "gameEventType": "ShipLeavingAlertCalled",
+            "overlapHandling": "IgnoreAll",
+            "tag": "LateMusic",
+            "conditions": [
+                {
+                    "conditionType": "PlayerLocation",
+                    "location": "Facility"
+                }
+            ],
+            "musicNames": [
+                "The Junkyard Office.mp3"
+            ]
+        },
+        {
+            "scriptEventType": "PlayMusic",
+            "gameEventType": "ShipLeavingAlertCalled",
+            "overlapHandling": "IgnoreAll",
+            "tag": "LateMusic",
+            "conditions": [],
+            "musicNames": [
+                "The Junkyard.mp3"
+            ]
+        },
+        {
+            "comment": "Stops the escape music when the ship takes off",
+            "scriptEventType": "StopMusic",
+            "gameEventType": "ShipTakeOff"
+        }
+    ]
+}
