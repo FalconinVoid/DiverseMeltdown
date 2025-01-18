@@ -1,0 +1,11 @@
+{
+    "isAddon": "true",
+    "scriptEvents": [
+        {
+            "scriptEventType": "PlayMusic",
+            "gameEventType": "PlayerDied",
+            "overlapHandling": "overlap",
+            "musicNames": ["death sound.mp3"]
+        }
+    ]
+}
