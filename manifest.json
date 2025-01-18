@@ -1,0 +1,7 @@
+{
+  "name": "DiverseMeltdown",
+  "version_number": "1.1.2",
+  "website_url": "https://github.com/FalconinVoid/DiverseMeltdown",
+  "description": "Plays more diverse Soundtrack in Facility Meltdown",
+  "dependencies": ["BGN-PizzaTowerEscapeMusic-2.4.0", "loaforc-FacilityMeltdown-2.7.1"]
+}
