@@ -5,6 +5,7 @@
 - Named every version in CHANGELOG
 - Added license ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)) in README
 - Added guide on how to enable extras in README
+- Added Github link in mainifest
 ### 1.1.1 (Volume Quick Patch)
 - Fixed Late Alarm being not affected by Volume Script
 ### 1.1.0 (Announcer Update)
